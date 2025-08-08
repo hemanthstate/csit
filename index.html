@@ -34,7 +34,59 @@
     nav a:hover {
       background-color: #1abc9c;
     }
+    
+    .carousel-container {
+      position: relative;
+      max-width: 1000px;
+      margin: 20px auto;
+      overflow: hidden;
+      border-radius: 10px;
+    }
 
+    .carousel-slide {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-slide img {
+      width: 1000px;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 18px;
+      z-index: 10;
+    }
+
+    .arrow-left {
+      left: 10px;
+    }
+
+    .arrow-right {
+      right: 10px;
+    }
+
+    .pause-play {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background-color: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    
     main {
       padding: 20px;
       text-align: center;
@@ -80,7 +132,53 @@
     <a href="#">Gallery</a>
     <a href="#">Contact</a>
   </nav>
+  
+  <!-- Banner Carousel -->
+  <div class="carousel-container">
+    <div class="carousel-slide" id="carouselSlide">
+      <img src="img1.jpg" alt="Slide 1">
+      <img src="img2.jpg" alt="Slide 2">
+      <img src="img3.jpg" alt="Slide 3">
+    </div>
+    <button class="arrow arrow-left" onclick="prevSlide()">&#10094;</button>
+    <button class="arrow arrow-right" onclick="nextSlide()">&#10095;</button>
+    <button class="pause-play" onclick="togglePlay()" id="playPauseBtn">Pause</button>
+  </div>
+  <script>
+    const slide = document.getElementById('carouselSlide');
+    const images = slide.querySelectorAll('img');
+    let counter = 0;
+    let playing = true;
+    let interval = setInterval(nextSlide, 3000);
 
+    function showSlide(index) {
+      if (index >= images.length) counter = 0;
+      else if (index < 0) counter = images.length - 1;
+      else counter = index;
+      slide.style.transform = `translateX(-${counter * 1000}px)`;
+    }
+
+    function nextSlide() {
+      showSlide(counter + 1);
+    }
+
+    function prevSlide() {
+      showSlide(counter - 1);
+    }
+
+    function togglePlay() {
+      const btn = document.getElementById('playPauseBtn');
+      if (playing) {
+        clearInterval(interval);
+        btn.textContent = "Play";
+      } else {
+        interval = setInterval(nextSlide, 3000);
+        btn.textContent = "Pause";
+      }
+      playing = !playing;
+    }
+  </script>
+  
   <main>
     <section>
        <img src="PHOTOS/LOGO.jpg" alt="Website Logo" class="logo">
