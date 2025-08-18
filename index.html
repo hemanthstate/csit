@@ -298,12 +298,66 @@
   </script>
 
   <main>
-    <section>
-      <img src="PHOTOS/LOGO.jpg" alt="Website Logo" class="logo">
-      <h2>Homepage</h2>
-      <p>Official website of CSIT</p>
-      <p>Page is under construction. Stay tuned for more updates.</p>
-    </section>
+    <div class="tile-container"></div>
+      <section class="tile tile-left">
+        <img src="PHOTOS/LOGO.jpg" alt="Website Logo" class="logo">
+        <h2>Homepage</h2>
+        <p>Official website of CSIT</p>
+        <p>Page is under construction. Stay tuned for more updates.</p>
+      </section>
+      <section class="tile tile-center">
+        <img src="PHOTOS/soc.jpg" alt="Events" class="logo">
+        <h2>Events</h2>
+        <p>Explore our latest events and activities.</p>
+        <p>Check back soon for event highlights!</p>
+      </section>
+      <section class="tile tile-right">
+        <img src="PHOTOS/soc2.jpg" alt="Initiatives" class="logo">
+        <h2>Initiatives</h2>
+        <p>Discover our ongoing initiatives and projects.</p>
+        <p>More details coming soon.</p>
+      </section>
+    </div>
+    <style>
+      .tile-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 32px;
+        margin: 32px auto;
+        max-width: 1200px;
+      }
+      .tile {
+        flex: 1 1 280px;
+        min-width: 260px;
+        max-width: 340px;
+        background-color: rgba(255,255,255,0.92);
+        border-radius: 12px;
+        box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+        padding: 24px 18px 18px 18px;
+        margin: 0;
+        text-align: center;
+        transition: transform 0.18s, box-shadow 0.18s;
+      }
+      .tile:hover {
+        transform: translateY(-6px) scale(1.03);
+        box-shadow: 0 6px 24px rgba(30,60,120,0.13);
+      }
+      .tile .logo {
+        max-width: 90px;
+        margin-bottom: 16px;
+      }
+      @media (max-width: 900px) {
+        .tile-container {
+          flex-direction: column;
+          gap: 20px;
+          align-items: center;
+        }
+        .tile {
+          max-width: 95vw;
+        }
+      }
+    </style></section>
   </main>
 
   <footer>
