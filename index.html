@@ -43,7 +43,11 @@
 
     header {
       background-color: rgba(44, 62, 80, 0.85);
-      padding: 20px;
+      height: 80px; /* Fixed height */
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       color: white;
       text-align: center;
       position: fixed;
@@ -57,8 +61,10 @@
       background-color: rgba(52, 73, 94, 0.85);
       display: flex;
       justify-content: center;
+      align-items: center;
+      height: 48px; /* Fixed height */
       position: fixed;
-      top: 72px; /* height of header (adjust if header height changes) */
+      top: 80px; /* Exactly header's height */
       left: 0;
       width: 100%;
       z-index: 19;
@@ -80,7 +86,7 @@
       width: 100%;
       max-height: 560px;
       overflow: hidden;
-      margin-top: 120px; /* header (72px) + nav (48px) = 120px */
+      margin-top: 128px; /* header (80px) + nav (48px) */
     }
 
     .slides {
@@ -164,8 +170,10 @@
   <canvas id="molecules" aria-hidden="true"></canvas>
 
   <header>
-    <h1>Welcome to Chemical Society, IISER TVM</h1>
-    <p>An initiative from School of Chemistry, IISER TVM</p>
+    <div>
+      <h1 style="margin:0;">Welcome to Chemical Society, IISER TVM</h1>
+      <p style="margin:0;">An initiative from School of Chemistry, IISER TVM</p>
+    </div>
   </header>
 
   <div id="loadingOverlay" style="display:none;">
