@@ -43,7 +43,7 @@
 
     header {
       background-color: rgba(44, 62, 80, 0.85);
-      height: 80px; /* Fixed height */
+      height: 120px; /* Increased header height */
       padding: 0 20px;
       display: flex;
       flex-direction: column;
@@ -62,9 +62,9 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 48px; /* Fixed height */
+      height: 48px;
       position: fixed;
-      top: 80px; /* Exactly header's height */
+      top: 120px; /* Move nav below new header height */
       left: 0;
       width: 100%;
       z-index: 19;
@@ -86,7 +86,7 @@
       width: 100%;
       max-height: 560px;
       overflow: hidden;
-      margin-top: 128px; /* header (80px) + nav (48px) */
+      margin-top: 168px; /* header (120px) + nav (48px) */
     }
 
     .slides {
