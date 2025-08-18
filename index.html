@@ -2,19 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta</section> name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chemical Society, IISER TVM (CSIT)</title>
   <style>
     /* -------------------------
        Page background (animated gradient)
        ------------------------- */
-    body {</section>
+    body {
       margin: 0;
       font-family: Tahoma, sans-serif;
       background: linear-gradient(270deg, #071022, #1b2b44, #334a6a, #7aa0d6);
       background-size: 600% 600%;
       animation: gradientBG 20s ease infinite;
-      overflow-x: hidde</section>n;
+      overflow-x: hidden;
     }
     @keyframes gradientBG {
       0% { background-position: 0% 50%; }
@@ -160,79 +160,77 @@
   </header>
 
   <div id="loadingOverlay" style="display:none;">
-        <div class="loader">
-            <div class="logo-spinner">
-                <img src="PHOTOS/LOGO.jpg" alt="CSIT Logo" class="loader-logo">
-                <span class="spinner-circle"></span>
-            </div>
-        </div>
+    <div class="loader">
+      <div class="logo-spinner">
+        <img src="PHOTOS/LOGO.jpg" alt="CSIT Logo" class="loader-logo">
+        <span class="spinner-circle"></span>
+      </div>
+    </div>
   </div>
-    <!-- ...existing code... -->
   <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="initiatives.html">Initiatives</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Contact</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="initiatives.html">Initiatives</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
   </nav>
-    <!-- ...existing code... -->
 
   <style>
     /* Loader overlay styles */
     #loadingOverlay {
-        position: fixed;
-        z-index: 9999;
-        inset: 0;
-        background: rgba(20, 30, 50, 0.92);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: opacity 0.3s;
+      position: fixed;
+      z-index: 9999;
+      inset: 0;
+      background: rgba(20, 30, 50, 0.92);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.3s;
     }
     .loader {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        min-width: 100vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      min-width: 100vw;
     }
     .logo-spinner {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 110px;
-        height: 110px;
-    .loader-logo {
-        width: 90px;
-        height: 90px;
-        border-radius: 50%;
-        box-shadow: 0 0 16px #fff8;
-        background: #fff;
-        object-fit: cover;
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        z-index: 2;
-        display: block;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 110px;
+      height: 110px;
     }
+    .loader-logo {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      box-shadow: 0 0 16px #fff8;
+      background: #fff;
+      object-fit: cover;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 2;
+      display: block;
     }
     .spinner-circle {
-        position: absolute;
-        top: 0; left: 0;
-        width: 110px;
-        height: 110px;
-        border-radius: 50%;
-        border: 6px solid #e0e0e0;
-        border-top: 6px solid #1abc9c;
-        box-sizing: border-box;
-        animation: spin 1s linear infinite;
-        z-index: 1;
+      position: absolute;
+      top: 0; left: 0;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      border: 6px solid #e0e0e0;
+      border-top: 6px solid #1abc9c;
+      box-sizing: border-box;
+      animation: spin 1s linear infinite;
+      z-index: 1;
     }
     @keyframes spin {
-        0% { transform: rotate(0deg);}
-        100% { transform: rotate(360deg);}
+      0% { transform: rotate(0deg);}
+      100% { transform: rotate(360deg);}
     }
   </style>
 
@@ -254,7 +252,6 @@
     });
   });
   </script>
-  <!-- ...existing code... -->
 
   <!-- Carousel -->
   <div class="carousel">
@@ -298,7 +295,7 @@
   </script>
 
   <main>
-    <div class="tile-container"></div>
+    <div class="tile-container">
       <section class="tile tile-left">
         <img src="PHOTOS/LOGO.jpg" alt="Website Logo" class="logo">
         <h2>Homepage</h2>
@@ -321,7 +318,6 @@
     <style>
       .tile-container {
         display: flex;
-        flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
         gap: 32px;
@@ -339,9 +335,6 @@
         margin: 0;
         text-align: center;
         transition: transform 0.18s, box-shadow 0.18s;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
       }
       .tile:hover {
         transform: translateY(-6px) scale(1.03);
@@ -362,7 +355,6 @@
         }
       }
     </style>
-    </style></section>
   </main>
 
   <footer>
