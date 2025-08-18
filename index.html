@@ -46,12 +46,18 @@
       padding: 20px;
       color: white;
       text-align: center;
+      position: sticky;    /* Make header sticky */
+      top: 0;
+      z-index: 10;
     }
 
     nav {
       background-color: rgba(52, 73, 94, 0.85);
       display: flex;
       justify-content: center;
+      position: sticky;    /* Make nav sticky */
+      top: 80px;           /* Adjust if your header height changes */
+      z-index: 9;
     }
 
     nav a {
@@ -138,10 +144,7 @@
       color: white;
       text-align: center;
       padding: 10px;
-      position: fixed;
-      width: 100%;
-      bottom: 0;
-      z-index: 1;
+      /* Remove position: fixed, width, bottom, z-index */
     }
 
     /* responsive tweak for smaller screens */
