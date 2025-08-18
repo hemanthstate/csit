@@ -90,21 +90,46 @@
     }
 
     .slides {
-      display: flex;
+      position: relative;
       width: 100%;
-      transition: transform 0.5s ease-in-out;
+      height: 560px;
     }
 
     .slide {
-      min-width: 100%;
-      box-sizing: border-box;
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      opacity: 0;
+      transition: opacity 1s ease;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .slide.active {
+      opacity: 1;
+      z-index: 2;
+      pointer-events: auto;
     }
 
     .slide img {
       width: 100%;
-      height: 560px; /* Reduced height */
+      height: 560px;
       object-fit: cover;
       display: block;
+      /* Ken Burns effect: slow zoom and pan */
+      animation: kenburns 8s ease-in-out forwards;
+    }
+
+    .slide:not(.active) img {
+      animation: none !important;
+    }
+
+    @keyframes kenburns {
+      0% {
+        transform: scale(1) translate(0, 0);
+      }
+      100% {
+        transform: scale(1.12) translate(-2%, -2%);
+      }
     }
 
     .prev, .next, .pause-play {
@@ -289,11 +314,15 @@
     let currentIndex = 0;
     let playing = true;
     const slides = document.getElementById("slides");
-    const totalSlides = slides.children.length;
+    const slideEls = slides.children;
+    const totalSlides = slideEls.length;
     const playPauseBtn = document.getElementById("playPauseBtn");
 
     function showSlide(index) {
-      slides.style.transform = `translateX(-${index * 100}%)`;
+      for (let i = 0; i < totalSlides; i++) {
+        slideEls[i].classList.remove('active');
+      }
+      slideEls[index].classList.add('active');
     }
 
     function changeSlide(direction) {
@@ -308,7 +337,10 @@
 
     setInterval(() => {
       if (playing) changeSlide(1);
-    }, 3000);
+    }, 8000); // 8 seconds for Ken Burns effect
+
+    // Show the first slide on load
+    showSlide(currentIndex);
   </script>
 
   <main>
